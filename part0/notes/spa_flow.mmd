@@ -1,0 +1,20 @@
+sequenceDiagram
+
+participant browser
+participant server
+
+browser->>+server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->>+browser: The server returns there's another files within the HTML code
+
+Note left of browser: The user get into the page and the browser realizes there are more files.
+
+browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->>browser: Serves the CSS file
+
+browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->>browser: Serves the JS file
+
+browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->>browser: Serves the JSON file [{content: "HOLA ESTA AHÍ?", date: "2023-12-29T20:14:07.653Z"},…]
+
+Note right of browser: There's a function to execute when the server returns data.json file to render the notes list.

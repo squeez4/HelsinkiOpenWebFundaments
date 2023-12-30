@@ -1,0 +1,12 @@
+sequenceDiagram
+
+participant browser
+participant server
+
+Note left of browser: The user writes a note and press the button save
+browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+activate server
+server-->>browser: The server replies with a success message through the POST: {"message":"note created"}
+deactivate server
+
+Note right of browser: When the message is equal to "note created", the browser executes the function adding the new note
