@@ -4,9 +4,9 @@ participant browser
 participant server
 
 browser->>+server: GET https://studies.cs.helsinki.fi/exampleapp/spa
-server-->>+browser: The server returns there's another files within the HTML code
+server-->>+browser: The server realizes there's other files within the HTML code
 
-Note left of browser: The user get into the page and the browser realizes there are more files.
+Note left of browser: The user gets into the page and the browser realizes there are more files.
 
 browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
 server-->>browser: Serves the CSS file
